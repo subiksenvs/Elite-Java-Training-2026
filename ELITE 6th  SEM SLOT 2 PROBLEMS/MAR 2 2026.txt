@@ -1,0 +1,442 @@
+Compare - string S9
+
+String Compare
+
+Input Format
+
+Accept two string as input
+
+Constraints
+
+NULL
+
+Output Format
+
+Equal / Not Equal
+
+Sample Input 0
+
+DreamDart
+DreamDart
+Sample Output 0
+
+Equal
+Explanation 0
+
+DreamDart == DreamDart , Equal
+
+Sample Input 1
+
+water
+class
+Sample Output 1
+
+Not Equal
+
+ANSWER
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String Str1 = sc.next();
+        String Str2 = sc.next();
+        if(Str1.equals(Str2)){
+            System.out.print("Equal");
+ 
+        }
+        else{
+            System.out.print("Not Equal");
+        }
+
+    }
+}
+
+---------------------------------------------------------------------------
+
+Search char - String B9
+Write a program to search for a character in a string
+
+Input Format
+
+Accept string as an input
+
+Constraints
+
+Null
+
+Output Format
+
+Present / Not Present
+
+Sample Input 0
+
+p
+apple
+Sample Output 0
+
+Present
+Sample Input 1
+
+f
+Myslate
+Sample Output 1
+
+Not Present
+
+ANSWER
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String Str1 = sc.nextLine();
+        String Str2 = sc.nextLine();
+        if(Str2.contains(Str1)){
+            System.out.print("Present");
+ 
+        }
+        else{
+            System.out.print("Not Present");
+        }
+
+    }
+}
+
+
+---------------------------------------------------------------------------
+
+Vowels with spaces - String B9
+
+Write a program to replace all vowels with spaces
+
+Input Format
+
+Accept string as an input
+
+Constraints
+
+Null
+
+Output Format
+
+Print the replaced string
+
+Sample Input 0
+
+Replace all vowels
+Sample Output 0
+
+R pl c   ll v w ls
+Sample Input 1
+
+DreamDart
+Sample Output 1
+
+Dr  mD rt
+
+ANSWER
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String Str1 = sc.nextLine();
+        String Str2 = Str1.replaceAll("[AEIOUaeiou]"," ");
+        System.out.print(Str2);
+       
+
+    }
+}
+
+---------------------------------------------------------------------------
+
+Count special characters - String B9
+
+Write a program to count the special characters in the given string
+
+Input Format
+
+Accept the string as an input
+
+Constraints
+
+Null
+
+Output Format
+
+Print the count of the special characters.
+
+Sample Input 0
+
+togy@#123
+Sample Output 0
+
+2
+
+ANSWER
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String Str1 = sc.nextLine();
+        int count =0;
+        for (int i = 0; i<Str1.length();i++){
+        if(!Character.isLetterOrDigit(Str1.charAt(i))){
+            count++;
+        }
+        }
+        System.out.print(count);
+    }
+
+}
+---------------------------------------------------------------------------
+
+Anagrams - String S9
+
+
+Write a program to check the given string is anagram or not
+
+
+Input Format
+
+Accept two strings as input
+
+Constraints
+
+Null
+
+Output Format
+
+Anagrams / Not Anagrams
+
+Sample Input 0
+
+Tom
+Mom
+Sample Output 0
+
+Tom and Mom are Not Anagrams.
+Sample Input 1
+
+listen
+silent
+Sample Output 1
+
+listen and silent are Anagrams.
+
+ANSWER
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        String a = s1.toLowerCase();
+        String b = s2.toLowerCase();
+
+        if(a.length() != b.length())
+        {
+            System.out.println(s1 + " and " + s2 + " are Not Anagrams.");
+            return;
+        }
+
+        int count[] = new int[26];
+
+        for(int i = 0; i < a.length(); i++)
+        {
+            count[a.charAt(i) - 'a']++;
+            count[b.charAt(i) - 'a']--;
+        }
+
+        boolean flag = true;
+
+        for(int i = 0; i < 26; i++)
+        {
+            if(count[i] != 0)
+            {
+                flag = false;
+                break;
+            }
+        }
+
+        if(flag)
+            System.out.println(s1 + " and " + s2 + " are Anagrams.");
+        else
+            System.out.println(s1 + " and " + s2 + " are Not Anagrams.");
+    }
+}
+
+---------------------------------------------------------------------------
+
+ISOGRAM - String S9
+
+Write a program to check whether the string is isogram or not
+
+Input Format
+
+Accept the string as input
+
+Constraints
+
+NULL
+
+Output Format
+
+ISOGRAM / NOT ISOGRAM
+
+Sample Input 0
+
+orange
+Sample Output 0
+
+ISOGRAM
+Explanation 0
+
+orange = all char are unique
+
+Sample Input 1
+
+test
+Sample Output 1
+
+NOT ISOGRAM
+Explanation 1
+
+test = t is repeated , so not isogram
+
+Sample Input 2
+
+i like coffe
+Sample Output 2
+
+NOT ISOGRAM
+Explanation 2
+
+i like coffe , e is repeated
+
+ANSWER
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().toLowerCase();
+
+        boolean isogram = true;
+
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(s.charAt(i) == ' ')
+                continue;
+
+            for(int j = i + 1; j < s.length(); j++)
+            {
+                if(s.charAt(i) == s.charAt(j))
+                {
+                    isogram = false;
+                    break;
+                }
+            }
+
+            if(!isogram)
+                break;
+        }
+
+        if(isogram)
+            System.out.println("ISOGRAM");
+        else
+            System.out.println("NOT ISOGRAM");
+    }
+}
+
+---------------------------------------------------------------------------
+
+TCS NQT ‘*’ and ‘#’
+
+Given a string S(input consisting) of ‘’ and ‘#’. The length of the string is variable. The task is to find the minimum number of ‘’ or ‘#’ to make it a valid string. The string is considered valid if the number of ‘’ and ‘#’ are equal. The ‘’ and ‘#’ can be at any position in the string. Note : The output will be a positive or negative integer based on number of ‘*’ and ‘#’ in the input string.
+
+(>#): positive integer (#>): negative integer (#=*): 0
+
+Input Format
+
+* -> Value of S
+Constraints
+
+NULL
+
+Output Format
+
+0 → number of * and # are equal
+
+Sample Input 0
+
+####***
+Sample Output 0
+
+-1
+Sample Input 1
+
+***##**
+Sample Output 1
+
+3
+
+ANSWER
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+
+        int star = 0;
+        int hash = 0;
+
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(s.charAt(i) == '*')
+                star++;
+            else if(s.charAt(i) == '#')
+                hash++;
+        }
+
+        System.out.println(star - hash);
+    }
+}
+
+---------------------------------------------------------------------------

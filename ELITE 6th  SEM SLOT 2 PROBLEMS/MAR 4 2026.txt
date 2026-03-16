@@ -1,0 +1,763 @@
+4 MARCH 2026
+
+1. Write the program to execute the reverse of string.
+
+Input Format
+
+first input corresponds to the string.
+Constraints
+
+No Constraints
+
+Output Format
+
+print the reverse of string
+Sample Input 0
+
+Manage
+Sample Output 0
+
+eganaM
+Sample Input 1
+
+Java
+Sample Output 1
+
+avaJ
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      char t=' ';
+      int i;
+      char[] strarr1 = str.toCharArray();
+      
+      
+      int s=0,e=str.length()-1;
+      
+      while(s<e){
+        t=strarr1[s];
+        strarr1[s]=strarr1[e];
+        strarr1[e]=t;
+        s++;
+        e--;
+      }
+      for(i=0;i<str.length();i++){
+       System.out.print(strarr1[i]);}}
+}
+
+----------------------------------------------------------------------
+
+2.Write the program to execute the string statement without blankspace.
+
+Input Format
+
+first input consists of string
+Constraints
+
+No Constraints
+
+Output Format
+
+print the string statement without blankspace
+Sample Input 0
+
+test cases!!
+Sample Output 0
+
+testcases!!
+Sample Input 1
+
+Hello World
+Sample Output 1
+
+HelloWorld
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+     
+      
+      str=str.replaceAll(" ","");
+      
+      System.out.print(str);
+    }
+}
+
+----------------------------------------------------------------------
+
+3.Write the program to delete the vowels letter in the string
+
+Input Format
+
+input corresponds to the string
+Constraints
+
+No Constraints
+
+Output Format
+
+print the string
+Sample Input 0
+
+java
+Sample Output 0
+
+jv
+Sample Input 1
+
+hello world
+Sample Output 1
+
+hll wrld
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      
+      
+      str=str.replaceAll("a","");
+      str=str.replaceAll("e","");
+      str=str.replaceAll("i","");
+      str=str.replaceAll("o","");
+      str=str.replaceAll("u","");
+      
+      System.out.print(str);
+    }
+}
+
+----------------------------------------------------------------------
+
+4. write the program to execute the concatenation of two string.
+
+Input Format
+
+first and second inputs corresponds to the string
+Constraints
+
+No Constraints
+
+Output Format
+
+print the concatenate of two string
+Sample Input 0
+
+hello 
+world
+Sample Output 0
+
+helloworld
+Sample Input 1
+
+sample
+input
+Sample Output 1
+
+sampleinput
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str = sc.next();
+      String str1 = sc.next();
+      System.out.print(str+str1);
+    }
+}
+
+----------------------------------------------------------------------
+
+5.Write the program to count the vowel letters in the string.
+
+Input Format
+
+input corresponds to the string
+Constraints
+
+No Constraints
+
+Output Format
+
+print the count values of the vowel letters.
+Sample Input 0
+
+test
+Sample Output 0
+
+1
+Sample Input 1
+
+test case
+Sample Output 1
+
+3
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      char[] strarr = str.toCharArray();
+      
+      int i,vc=0,cc=0;
+      for(i=0;i<str.length();i++){
+        if(strarr[i]=='a' || strarr[i]=='e' || strarr[i]=='i' || strarr[i]=='o' || strarr[i]=='u')vc++;
+        else cc++;
+      }
+      
+      System.out.println(vc);
+    }
+}
+
+----------------------------------------------------------------------
+
+6. Write the program whether the two strings are anagram or not.
+
+Input Format
+
+input consists of two string
+Constraints
+
+No Constraints
+
+Output Format
+
+if the two strings are anagram, print the statement is "The given strings are anagram" or "The given strings are not an anagram".
+Sample Input 0
+
+book
+cook
+Sample Output 0
+
+The given strings are not an anagram
+Sample Input 1
+
+race
+care
+Sample Output 1
+
+The given strings are an anagram
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      String str1 = sc.nextLine();
+      String str2 = sc.nextLine();
+      str1=str1.toLowerCase().replaceAll(" ","");
+      str2=str2.toLowerCase().replaceAll(" ","");
+      char[] strarr1 = str1.toCharArray();
+      char[] strarr2 = str2.toCharArray();
+      
+      Arrays.sort(strarr1);
+      Arrays.sort(strarr2);
+      
+      if(Arrays.equals(strarr1,strarr2)){
+        System.out.print("The given strings are an anagram");}
+      else{
+        System.out.print("The given strings are not an anagram");
+      }
+
+    }
+}
+
+----------------------------------------------------------------------
+
+7.Camel case (stylized as camelCase or CamelCase) is the practice of writing compound words or phrases such that each word or abbreviation in the middle of the phrase begins with a capital letter, with no intervening spaces or punctuation. Event names should be entered in camel case format. However many users failed to follow this convention. To maintain uniformity, you have to change all the event names into camel case. Write a program to convert event names to camel case format.
+
+Create a driver class called Main. In the Main method, obtain the inputs from the console and print the names of the events in camel case.
+
+Note: without using function.
+
+Input Format
+
+Input consists of the event name
+Constraints
+
+No Contraints
+
+Output Format
+
+Output prints every first letter of the word in uppercase
+Sample Input 0
+
+book sale
+Sample Output 0
+
+BookSale
+Sample Input 1
+
+sports meet under18
+Sample Output 1
+
+SportsMeetUnder18
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        int n=str.length(),count=0,i,j;
+        char[] arr = str.toCharArray();
+        
+        
+        arr[0]=(char)(((int)arr[0])-32);
+        for(i=1;i<n;i++){
+            if(arr[i]==' '){
+                for(j=i;j<n-1;j++){
+                    arr[j]=arr[j+1];
+                }
+                arr[i]=(char)(((int)arr[i])-32);
+                count++;
+            }
+            
+        }
+
+        for(i=0;i<n-count;i++){
+            System.out.print(arr[i]);
+        }
+    }
+}
+
+----------------------------------------------------------------------
+
+8. The program to toggle each character in a string is discussed here. A string is given as input in which all the lower case letters are converted to upper case and the upper case letters are converted to lower case.
+
+Input Format
+
+Input consists of single String
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the toggle case string
+
+Sample Input 0
+
+iNNaTe TaleNT
+Sample Output 0
+
+InnAtE tALEnt
+Sample Input 1
+
+toGGlE
+Sample Output 1
+
+TOggLe
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        int n=str.length(),count=1,i,j;
+        char[] arr = str.toCharArray();
+        int c,r;
+        
+        for(i=0;i<n;i++){
+            c=(int)arr[i];
+            if(arr[i]!=' '){
+            if(c>96){
+               r=c-32;
+                arr[i]=(char)r;
+            }
+            else{
+                r=c+32;
+                arr[i]=(char)r;
+            }}
+        }
+        
+        for(i=0;i<n;i++){
+            System.out.print(arr[i]);
+        }
+    }
+}
+
+----------------------------------------------------------------------
+
+9. Write a program to replace the spaces in a string with a specific character.
+
+Note:Without using any inbuilt Functions
+Input Format
+
+First input consists of String. Second input consists of character.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the statement
+
+Sample Input 0
+
+Innate Talent Training and Development Company
+^
+Sample Output 0
+
+Innate^Talent^Training^and^Development^Company
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String s = sc.nextLine();
+        char c = s.charAt(0);
+        int n=str.length(),count=1,i,j;
+        char[] arr = str.toCharArray();
+        
+        for(i=0;i<n;i++){
+            if(arr[i]==' '){
+                System.out.print(c);
+            }
+            else{
+                System.out.print(arr[i]);
+            }
+        }
+    }
+}
+
+----------------------------------------------------------------------
+
+10. Write a program to split strings by space into words. - Note:You should not use the split method or any other inbuilt functions.
+
+Input Format
+
+Input consists of string
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the each word of the string
+
+Sample Input 0
+
+Innate Talent Training and Development Company
+Sample Output 0
+
+Innate
+Talent
+Training
+and
+Development
+Company
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n=str.length(),count=1,i,j;
+        char[] arr = str.toCharArray();
+        
+        for(i=0;i<n;i++){
+            if(arr[i]==' '){
+                System.out.println();
+            }
+            else{
+                System.out.print(arr[i]);
+            }
+        }
+        
+    }
+}
+
+----------------------------------------------------------------------
+
+11.Write a program to count each character in a given string.
+
+Input Format
+
+Input consists of String
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the count of each character in a string
+
+Sample Input 0
+
+innatetalent
+Sample Output 0
+
+i    1
+n    3
+a    2
+t    3
+e    2
+l    1
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n=str.length(),count=1,i,j;
+        boolean[] f = new boolean[n];
+        
+        
+        for(i=0;i<n;i++){
+            count=1;
+            if(f[i]==false){
+            for(j=i+1;j<n;j++){
+                
+                if(str.charAt(i)==str.charAt(j)){
+                    count++;
+                    f[j]=true;
+                    
+                }
+            }
+            System.out.println(str.charAt(i)+" "+count);}
+        }
+        
+        
+        
+    }
+}
+
+----------------------------------------------------------------------
+
+12. Write a program to calculate the sum of digits in the given string.
+
+Input Format
+
+Input consists of alphanumeric
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the sum of gigit value.
+
+Sample Input 0
+
+hello23hai7
+Sample Output 0
+
+The Sum Of Digit Value is 0012
+Sample Input 1
+
+Test34case3checker3
+Sample Output 1
+
+The Sum Of Digit Value is 013
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n=str.length(),i,sum=0;
+        char c=' ';
+        int cc;
+        String s="";
+        
+        for(i=0;i<n;i++){
+            
+            c=str.charAt(i);
+            if(Character.isDigit(c)){
+                        
+               cc=c-'0';
+                sum+=cc;
+            }
+        }
+        if(sum%2==0){
+        System.out.format("The Sum Of Digit Value is %04d",sum);}
+        else{
+        System.out.format("The Sum Of Digit Value is %03d",sum);}
+    }
+}
+
+
+----------------------------------------------------------------------
+
+13. write the program to execute the spiral pattern of the string.
+
+Input Format
+
+input consist of string
+Constraints
+
+No constraints
+
+Output Format
+
+print the spiral pattern of string
+Sample Input 0
+
+Hello
+Sample Output 0
+
+Hello
+e   l
+l   l
+l   e
+olleH
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n=str.length();
+        char s=' ';
+        StringBuffer sb = new StringBuffer(str);
+        StringBuffer sr = new StringBuffer(str);
+        sr.reverse();
+        char[][] arr = new char[n][n];
+        int i,j;
+        for(i=0;i<n;i++){
+            
+            if(i==0){
+            for(j=0;j<n;j++){
+                arr[i][j]=sb.charAt(j);
+            }
+            
+        }
+            
+            if(i==n-1){
+                for(j=n-1;j>=0;j--){
+                arr[i][j]=sr.charAt(j);
+            }
+                
+            }
+            
+            for(j=0;j<n;j++){
+                if(j==0){
+                    arr[i][j]=sb.charAt(i);
+                }
+                if(j==n-1){
+                    arr[i][j]=sr.charAt(i);
+                }
+                if(i!=0 && i!=n-1 && j!=0 && j!=n-1){
+                    arr[i][j]=s;
+                }
+            }
+        }
+            
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+            System.out.print(arr[i][j]);}
+            System.out.println();
+        }
+        
+    
+}}
+
+----------------------------------------------------------------------

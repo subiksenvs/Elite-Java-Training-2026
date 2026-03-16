@@ -1,0 +1,465 @@
+MAR 10 HACKER RANK
+
+1.Write a program to check whether the string is isogram or not
+
+Input Format
+
+Accept the string as input
+
+Constraints
+
+NULL
+
+Output Format
+
+ISOGRAM / NOT ISOGRAM
+
+Sample Input 0
+
+orange
+Sample Output 0
+
+ISOGRAM
+Explanation 0
+
+orange = all char are unique
+
+Sample Input 1
+
+test
+Sample Output 1
+
+NOT ISOGRAM
+Explanation 1
+
+test = t is repeated , so not isogram
+
+Sample Input 2
+
+i like coffe
+Sample Output 2
+
+NOT ISOGRAM
+Explanation 2
+
+i like coffe , e is repeated
+
+SOLUTION:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s=sc.nextLine();
+        int frq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)!=' '){
+                frq[s.charAt(i)-97]++;
+            }
+        }
+        for(int i=0;i<26;i++){
+            if(frq[i]>1){
+                System.out.print ("NOT ISOGRAM");
+                return;
+            }
+        }
+        System.out.print ("ISOGRAM");
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+2.Write a program to check the given string is anagram or not
+
+Input Format
+
+Accept two strings as input
+
+Constraints
+
+Null
+
+Output Format
+
+Anagrams / Not Anagrams
+
+Sample Input 0
+
+Tom
+Mom
+Sample Output 0
+
+Tom and Mom are Not Anagrams.
+Sample Input 1
+
+listen
+silent
+Sample Output 1
+
+listen and silent are Anagrams.
+
+SOLUTION:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1=sc.nextLine();
+        String s=str1.toLowerCase();
+        String str2=sc.nextLine();
+        String st=str2.toLowerCase();
+        int frq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            frq[s.charAt(i)-97]++;
+        }
+        for(int i=0;i<st.length();i++){
+            frq[st.charAt(i)-97]--;
+        }
+        for(int i=0;i<26;i++){
+            if(frq[i]!=0){
+                System.out.print (str1+" and "+str2+" are Not Anagrams.");
+                return;
+            }
+        }
+        System.out.print (str1+" and "+str2+" are Anagrams.");
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a c program to check whether a given string is Pangram or not
+
+A pangram is a sentence containing every letter in the English Alphabet.
+
+Input Format
+
+Accept the string as input
+
+Constraints
+
+NULL
+
+Output Format
+
+Pangrams / Not Pangrams
+
+Sample Input 0
+
+The quick brown fox jumps over the lazy dog
+Sample Output 0
+
+Pangrams
+Explanation 0
+
+Every letter in the English Alphabet.
+
+Sample Input 1
+
+this garden is very nice to look
+Sample Output 1
+
+Not Pangrams
+
+SOLUTION:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s=sc.nextLine();
+        s=s.toLowerCase();
+        int frq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)>='a' && s.charAt(i)<='z' ){
+                frq[s.charAt(i)-97]++;
+            }
+        }
+        for(int i=0;i<26;i++){
+            if(frq[i]==0){
+                System.out.print ("Not Pangrams");
+                return;
+            }
+        }
+        System.out.print ("Pangrams");
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+
+4.Write a program to count each character in a given string.
+
+Input Format
+
+Input consists of String
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Execute the count of each character in a string
+
+Sample Input 0
+
+innatetalent
+Sample Output 0
+
+i 1
+n 3
+a 2
+t 3
+e 2
+l 1
+Sample Input 1
+
+elite
+Sample Output 1
+
+e 2
+l 1
+i 1
+t 1
+
+SOLUTION:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s=sc.nextLine();
+        int frq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)!=' '){
+                frq[s.charAt(i)-97]++;
+            }
+        }
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            int n=frq[c-97];
+            if(frq[c-97]!=0){
+                System.out.println (c+" "+n);
+            }
+            frq[c-97]=0;
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+LEETCODE PROBLEM 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+704. Binary Search
+Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4
+Explanation: 9 exists in nums and its index is 4
+Example 2:
+
+Input: nums = [-1,0,3,5,9,12], target = 2
+Output: -1
+Explanation: 2 does not exist in nums so return -1
+ 
+
+Constraints:
+
+1 <= nums.length <= 104
+-104 < nums[i], target < 104
+All the integers in nums are unique.
+nums is sorted in ascending order.
+
+SOLUTION:
+
+class Solution {
+    public int search(int[] arr, int target) {
+        int start=0,end=arr.length-1,mid;
+        while(start<=end){
+        mid=(start+end)/2;
+        if(arr[mid]==target) return mid;
+        if(arr[mid]>target) end=mid-1;
+        else start=mid+1;
+        }
+        return -1; 
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+344. Reverse String
+Write a function that reverses a string. The input string is given as an array of characters s.
+
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+ 
+
+Example 1:
+
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+ 
+
+Constraints:
+
+1 <= s.length <= 105
+s[i] is a printable ascii character.
+
+SOLUTION:
+
+class Solution {
+    public void reverseString(char[] s) {
+        int left=0,right=s.length-1;
+        while(left<=right){
+            char temp=s[left];
+            s[left]=s[right];
+            s[right]=temp;
+            left++;
+            right--;
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+917. Reverse Only Letters
+Given a string s, reverse the string according to the following rules:
+
+All the characters that are not English letters remain in the same position.
+All the English letters (lowercase or uppercase) should be reversed.
+Return s after reversing it.
+
+ 
+
+Example 1:
+
+Input: s = "ab-cd"
+Output: "dc-ba"
+Example 2:
+
+Input: s = "a-bC-dEf-ghIj"
+Output: "j-Ih-gfE-dCba"
+Example 3:
+
+Input: s = "Test1ng-Leet=code-Q!"
+Output: "Qedo1ct-eeLg=ntse-T!"
+ 
+
+Constraints:
+
+1 <= s.length <= 100
+s consists of characters with ASCII values in the range [33, 122].
+s does not contain '\"' or '\\'.
+
+SOLUTION:
+
+class Solution {
+    public String reverseOnlyLetters(String s) {
+        char[] arr = s.toCharArray();
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            if (Character.isLetter(arr[start]) && Character.isLetter(arr[end])) {
+                char temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            } else if (!Character.isLetter(arr[start])) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+        return new String(arr);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+345. Reverse Vowels of a String
+Given a string s, reverse only all the vowels in the string and return it.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+ 
+
+Example 1:
+
+Input: s = "IceCreAm"
+
+Output: "AceCreIm"
+
+Explanation:
+
+The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+Example 2:
+
+Input: s = "leetcode"
+
+Output: "leotcede"
+
+ 
+
+Constraints:
+
+1 <= s.length <= 3 * 105
+s consist of printable ASCII characters.
+
+SOLUTION:
+
+class Solution {
+    public String reverseVowels(String s) {
+        int left=0,right=s.length()-1;
+        char arr[]=s.toCharArray();
+        String vow="aeiouAEIOU";
+        while(left<=right){
+            if(vow.indexOf(s.charAt(left))!=-1 && vow.indexOf(s.charAt(right))!=-1){
+                char ch=arr[left];
+                arr[left]=arr[right];
+                arr[right]=ch;
+                left++;
+                right--;
+            }
+            else if(vow.indexOf(s.charAt(left))==-1&& vow.indexOf(s.charAt(right))!=-1) left++;
+            else right--;
+        }
+        String ans=new String(arr);
+        return ans;
+    }
+}

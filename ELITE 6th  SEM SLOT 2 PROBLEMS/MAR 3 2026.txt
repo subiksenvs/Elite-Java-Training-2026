@@ -1,0 +1,526 @@
+MARCH 3  (LINK: https://onecompiler.com/challenges/3w8xvfbtb/strings-challenge )
+1.Length of a string
+Max Score: 1 | Difficulty: Not Specified
+Take a string from the input and print the length of that string
+Input:
+OneCompiler
+Output:
+11
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int count=0;
+ 	Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	for(int i=0; i<input.length(); i++) {
+ 	  count++;
+  }
+  		System.out.println(count);
+    }
+}
+2.Join the strings
+Max Score: 2 | Difficulty: Not Specified
+Take two strings from the input, join those two strings with a space and print the new string
+Input:
+Harry
+Potter
+Output:
+Harry Potter
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+ 
+ 	Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	 	String input1 = sc.nextLine();
+      System.out.println(input+" "+input1);
+  }
+}
+
+3.Compare the Strings
+Max Score: 3 | Difficulty: Not Specified
+Take two strings from the input and print whether or not the strings are equal
+Input(1):
+Hello
+Hi
+Output(1):
+false
+Input(2):
+Hello
+Hello
+Output(2):
+true
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	 	String input1 = sc.nextLine();
+ 	System.out.println(input.equals(input1));
+  }
+}
+
+4.First character of a string
+Max Score: 3 | Difficulty: Not Specified
+Take a string from the input and print the first character of that string
+Input:
+World
+Output:
+W
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	System.out.println(input.charAt(0));
+}
+}
+
+5.Last character of a string
+Max Score: 3 | Difficulty: Not Specified
+Take a string from the input and print the last character of that string
+Input:
+World
+Output:
+d
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	System.out.println(input.charAt(input.length()-1));
+ 	
+    }
+}
+
+6.Join first & last characters of a string
+Max Score: 4 | Difficulty: Not Specified
+Take a string from the input and print the first character and last characters of the string together
+Input:
+Hello World
+Output:
+Hd
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+   Scanner sc=new Scanner(System.in);
+ 	String input = sc.nextLine();
+ 	System.out.print(input.charAt(0));
+ 		System.out.println(input.charAt(input.length()-1));
+  }
+}
+
+7.Alphanumeric strings
+Max Score: 5 | Difficulty: Not Specified
+Take a string from the input and check whether or not it contains both letters and numerals
+Input(1):
+R2D2
+Output(1):
+true
+Input(2):
+OC
+Output(2):
+false
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
+        boolean hasLetter = false;
+        boolean hasDigit = false;
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            if (Character.isLetter(ch)) {
+                hasLetter = true;
+            } else if (Character.isDigit(ch)) {
+                hasDigit = true;
+            }
+
+            // Early exit if both found
+            if (hasLetter && hasDigit) {
+                break;
+            }
+        }
+
+        if (hasLetter && hasDigit) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
+
+8.Uppercase check
+Max Score: 5 | Difficulty: Not Specified
+Take a string from the input and check all the letters in the string are of upper case
+Input(1):
+OC
+Output(1):
+true
+Input(2):
+oc
+Output(2):
+false
+
+import java.util.Scanner;
+
+public class UppercaseCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        boolean isAllUpper = true;
+
+        for (char ch : input.toCharArray()) {
+            if (Character.isLetter(ch) && !Character.isUpperCase(ch)) {
+                isAllUpper = false;
+                break;
+            }
+        }
+
+        System.out.println(isAllUpper);
+    }
+}
+
+9.Lowercase check
+Max Score: 5 | Difficulty: Not Specified
+Take a string from the input and check all the letters in the string are of lower case
+Input:
+OC
+Output:
+false
+Input:
+oc
+Output:
+true
+
+import java.util.Scanner;
+
+public class LowercaseCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        boolean isAllLower = true;
+
+        for (char ch : input.toCharArray()) {
+            if (Character.isLetter(ch) && !Character.isLowerCase(ch)) {
+                isAllLower = false;
+                break;
+            }
+        }
+
+        System.out.println(isAllLower);
+    }
+}
+
+10.String lengths equal or not
+Max Score: 5 | Difficulty: Not Specified
+Take two strings from the input and check the lengths of those strings equal or not
+Input:
+Peter
+Griffin
+Output:
+false
+
+import java.util.Scanner;
+
+public class StringLengthCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read two strings from input
+        String str1 = scanner.nextLine();
+        String str2 = scanner.nextLine();
+
+        // Compare their lengths
+        boolean isEqualLength = str1.length() == str2.length();
+
+        // Print result
+        System.out.println(isEqualLength);
+    }
+}
+11.Reverse a string
+Max Score: 5 | Difficulty: Not Specified
+Take a string from the input and print it in reverse
+Tom
+Output:
+moT
+
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read input string
+        String input = scanner.nextLine();
+
+        // Reverse the string using StringBuilder
+        String reversed = new StringBuilder(input).reverse().toString();
+
+        // Print reversed string
+        System.out.println(reversed);
+    }
+}
+
+12.Split strings by comma
+Max Score: 5 | Difficulty: Not Specified
+Take a string from the input and split the strings with comma. Print the new strings one per line
+Input:
+a,b,c,d
+Output:
+a
+b
+c
+d
+
+import java.util.Scanner;
+
+public class SplitByComma {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read input line
+        String input = scanner.nextLine();
+
+        // Split the string by comma
+        String[] parts = input.split(",");
+
+        // Print each part on a new line
+        for (String part : parts) {
+            System.out.println(part);
+        }
+    }
+}
+13.Remove vowels
+Max Score: 6 | Difficulty: Not Specified
+Take a string from the input and remove the vowels and print it
+Input:
+Harry
+Output:
+Hrry
+
+import java.util.Scanner;
+
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String result = input.replaceAll("[aeiouAEIOU]", "");
+        System.out.println(result);
+    }
+}
+14.Reverse the character case
+Max Score: 7 | Difficulty: Not Specified
+Take a string from the input and change lowercase characters to uppercase and uppercase characters to lowercase
+Input:
+Harry
+Output:
+hARRY
+
+import java.util.Scanner;
+
+public class ReverseCase {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        StringBuilder result = new StringBuilder();
+
+        for (char ch : input.toCharArray()) {
+            if (Character.isUpperCase(ch)) {
+                result.append(Character.toLowerCase(ch));
+            } else if (Character.isLowerCase(ch)) {
+                result.append(Character.toUpperCase(ch));
+            } else {
+                result.append(ch); // Keep non-alphabet characters as they are
+            }
+        }
+
+        System.out.println(result.toString());
+    }
+}
+15.Print ascii value
+Max Score: 8 | Difficulty: Not Specified
+Take a string from the input and print ascii character
+Input:
+A
+Output:
+65
+import java.util.Scanner;
+
+public class AsciiValue {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        char ch = input.charAt(0);
+        System.out.println((int) ch);
+    }
+}
+16.Remove occurrences of a char
+Max Score: 8 | Difficulty: Not Specified
+Take a string from the input and remove all occurrences of given char from that string
+Input:
+abcdefghabcdefgh
+b
+Output:
+acdefghacdefgh
+
+import java.util.Scanner;
+
+public class RemoveCharOccurrences {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the input string
+        String input = scanner.nextLine();
+
+        // Read the character to remove (assuming input is a single char)
+        char toRemove = scanner.nextLine().charAt(0);
+
+        // Remove all occurrences of toRemove from input
+        String result = input.replace(String.valueOf(toRemove), "");
+
+        // Print the result
+        System.out.println(result);
+    }
+}
+17.Search for a word
+Max Score: 9 | Difficulty: Not Specified
+Search a word existence inside a given string
+Input:
+Wikipedia is a free online encyclopedia, created and edited by volunteers around the world
+online
+Output:
+true
+
+import java.util.Scanner;
+
+public class SearchWord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String sentence = scanner.nextLine();
+        String word = scanner.nextLine();
+
+        
+        boolean exists = sentence.contains(word);
+
+        System.out.println(exists);
+    }
+}
+18.Count vowels and consonants
+Max Score: 10 | Difficulty: Not Specified
+Count the total vowels and consonants in a given string and print them
+Input:
+Harry Potter
+Output:
+3
+9
+import java.util.Scanner;
+
+public class CountVowelsConsonants {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        int vowels = 0;
+        int consonants = 0;
+
+        for (char ch : input.toLowerCase().toCharArray()) {
+            if (ch >= 'a' && ch <= 'z') {
+                if ("aeiou".indexOf(ch) != -1) {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+
+        System.out.println(vowels);
+        System.out.println(consonants);
+    }
+}
+19.Anagram check
+Max Score: 10 | Difficulty: Not Specified
+Check the given 2 strings are anagrams.
+Hint: anagram means the strings contains same characters but order of characters is not important
+Note: Ignore considering the case or spaces.
+Input(1):
+Listen
+Silent
+Output(1):
+true
+Input(1):
+School master
+The classroom
+Output(1):
+true
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class AnagramCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str1 = scanner.nextLine();
+        String str2 = scanner.nextLine();
+        str1 = str1.replaceAll("\\s+", "").toLowerCase();
+        str2 = str2.replaceAll("\\s+", "").toLowerCase();
+        if (str1.length() != str2.length()) {
+            System.out.println(false);
+            return;
+        }
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        System.out.println(Arrays.equals(arr1, arr2));
+    }
+}
+20.Palindrome check
+Max Score: 10 | Difficulty: Not Specified
+Check whether or not the given string is a palindrome
+Input:
+civic
+Output:
+true
+
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+
+        boolean isPalindrome = true;
+        int n = normalized.length();
+
+        for (int i = 0; i < n / 2; i++) {
+            if (normalized.charAt(i) != normalized.charAt(n - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+  System.out.println(isPalindrome);
+    }
+}
